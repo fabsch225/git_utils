@@ -13,8 +13,8 @@ if [ "$#" -ne 2 ]; then
     usage
 fi
 
-MONOREPO_DIR=$1
-REPOS_DIR=$2
+MONOREPO_DIR=$(realpath "$1")
+REPOS_DIR=$(realpath "$2")
 
 if [ ! -d "$REPOS_DIR" ]; then
     echo "Error: Repos directory '$REPOS_DIR' does not exist."
